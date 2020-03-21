@@ -83,7 +83,7 @@ function autocomplete(input, latInput, lngInput) {
     dropdown.addListener('place_changed', function () {
         var place = dropdown.getPlace();
         latInput.value = place.geometry.location.lat();
-        lngInput.value = place.geometry.location.lat();
+        lngInput.value = place.geometry.location.lng();
     });
     // if someone hits enter on the address field, don't submit the form
     input.on('keydown', function (e) {
