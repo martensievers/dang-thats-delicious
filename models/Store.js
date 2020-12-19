@@ -32,7 +32,18 @@ const storeSchema = new mongoose.Schema({
             required: 'You must supply an address!'
         }
     },
-    photo: String
+    photo: String,
+    author: {
+        type: mongoose.Schema.ObjectId,
+        ref: 'User',
+        required: 'You must supply an author'
+    }
+});
+
+// Define our indexes
+storeSchema.index({
+    name: 'text',
+    description: 'text'
 });
 
 storeSchema.pre('save', async function(next) {
@@ -50,7 +61,7 @@ storeSchema.pre('save', async function(next) {
 
     next();
     // TODO make more resilient so slugs are unique
-})
+});
 
 storeSchema.statics.getTagsList = function() {
     return this.aggregate([
@@ -61,6 +72,6 @@ storeSchema.statics.getTagsList = function() {
         // sort stores in descending order
         { $sort: { count: -1 } }
     ]);
-}
+};
 
 module.exports = mongoose.model('Store', storeSchema)
