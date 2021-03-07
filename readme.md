@@ -6,6 +6,11 @@ The application has three main models - Users, Stores, and Review - all of which
 
 ![Video](https://imgur.com/8a7YZln.gif)
 
+## Mongo DB
+
+Dang that's delicious runs on a MongoDB setup, which requires a local or remote database connection. To set one up, follow the steps below:
+
+
 ## Sample Data
 
 To load sample data, run the following command in your terminal:
