@@ -33,4 +33,17 @@ That will populate 16 stores with 3 authors and 41 reviews. The logins for the a
 |Debbie Downer|debbie@example.com|debbie|
 |Beau|beau@example.com|beau|
 
+## Required variables
 
+```
+NODE_ENV=development
+DATABASE=mongodb+srv://
+MAIL_USER=
+MAIL_PASS=
+MAIL_HOST=smtp.mailtrap.io
+MAIL_PORT=2525
+PORT=7777
+MAP_KEY=
+SECRET=
+KEY=
+```
