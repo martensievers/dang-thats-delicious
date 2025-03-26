@@ -7,10 +7,10 @@
 */
 
 exports.catchErrors = (fn) => {
-  return function(req, res, next) {
-    return fn(req, res, next).catch(next);
+  return (...args) => {
+    return Promise.resolve(fn(...args)).catch(args[args.length - 1]);
   };
-};
+}
 
 /*
   Not Found Error Handler

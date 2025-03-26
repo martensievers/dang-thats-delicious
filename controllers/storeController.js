@@ -17,6 +17,10 @@ const multerOptions = {
 };
 
 exports.homePage = (req, res) => {
+    req.flash('error', 'Something Happened');
+    req.flash('info', 'Something Happened');
+    req.flash('warning', 'Something Happened');
+    req.flash('success', 'Something Happened');
     res.render('index');
 };
 
